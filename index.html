@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Plumbing Uganda Limited | Professional Plumbing Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #FF6B00;
+            --secondary: #333333;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #e05d00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header.scrolled {
+            background: var(--white);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero .btn {
+            animation: fadeIn 1.5s ease;
+        }
+        
+        /* About Section */
+        .about {
+            background: var(--light);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+        }
+        
+        .service-content .price {
+            font-weight: 700;
+            color: var(--primary);
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
+        
+        /* Products Section */
+        .products {
+            background: var(--light);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-images {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease;
+        }
+        
+        .product-images img:not(:first-child) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        
+        .product-card:hover .product-images img:first-child {
+            opacity: 0;
+        }
+        
+        .product-card:hover .product-images img:nth-child(2) {
+            opacity: 1;
+        }
+        
+        .product-card:hover .product-images img:nth-child(3) {
+            opacity: 1;
+        }
+        
+        .product-content {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .product-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .product-content .price {
+            font-weight: 700;
+            color: var(--primary);
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp FAB */
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text, .about-image {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 40px 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .whatsapp-fab {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <!-- Replace with actual logo -->
+                    <img src="images/logo.jpg" alt="Perfect Plumbing Logo">
+                    <div class="logo-text">Perfect <span class="text-primary">Plumbing</span></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional Plumbing Solutions in Uganda</h1>
+                <p>Perfect Plumbing Uganda Limited delivers dependable, high-quality plumbing services across Uganda with precision, innovation, and fair pricing.</p>
+                <a href="#services" class="btn">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Since 2010, Perfect Plumbing Uganda Limited has been at the forefront of delivering exceptional plumbing solutions across Uganda. Our commitment to quality, reliability, and customer satisfaction has made us a trusted name in the industry.</p>
+                    <p>We specialize in both residential and commercial plumbing projects, offering innovative solutions tailored to meet our clients' specific needs. Our team of certified professionals brings expertise and dedication to every project, ensuring flawless execution from start to finish.</p>
+                    <p>At Perfect Plumbing Uganda Limited, we believe in transparent pricing, timely project completion, and using only the highest quality materials. Our mission is to provide plumbing solutions that stand the test of time while maintaining the highest standards of professionalism.</p>
+                    <p>Perfect Plumbing Uganda Limited – Professional and Reliable.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/1.jpg" alt="Our Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/3.jpg" alt="Biodigester Installation">
+                    </div>
+                    <div class="service-content">
+                        <h3>Biodigester Installation</h3>
+                        <p>Save 10% on our 900mm biodigester — now only UGX 2,000,000! This system is designed to serve up to 30 users daily, making it a perfect, affordable solution for homes, offices and businesses.</p>
+                        <div class="price">Starting from UGX 2,000,000</div>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/4.jpg" alt="Swimming Pool Plumbing">
+                    </div>
+                    <div class="service-content">
+                        <h3>Swimming Pool Plumbing</h3>
+                        <p>We specialize in designing and installing efficient plumbing systems for swimming pools of all sizes. Our team ensures proper water circulation, filtration, and drainage for optimal pool performance.</p>
+                        <div class="price">Starting from UGX ..............</div>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/8.jpg" alt="Shallow Well Drilling">
+                    </div>
+                    <div class="service-content">
+                        <h3>Shallow Well Drilling</h3>
+                        <p>Our shallow well drilling service provides reliable water solutions for homes and small-scale agricultural needs. We use modern drilling equipment to access clean groundwater efficiently.</p>
+                        <div class="price">Starting from UGX ............</div>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/7.jpg" alt="Borehole Drilling">
+                    </div>
+                    <div class="service-content">
+                        <h3>Borehole Drilling</h3>
+                        <p>For deeper water needs, our borehole drilling services provide access to reliable underground water sources. We handle everything from geological surveys to pump installation.</p>
+                        <div class="price">Starting from UGX .............</div>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/6.jpg" alt="Plumbing Renovation">
+                    </div>
+                    <div class="service-content">
+                        <h3>Plumbing Renovation</h3>
+                        <p>Upgrade your existing plumbing system with our professional renovation services. We modernize outdated systems, fix leaks, and improve water efficiency in homes and businesses.</p>
+                        <div class="price">Starting from UGX ...........</div>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/11.jpg" alt="Submersible Water Pump">
+                        <img src="images/111.jpg" alt="Submersible Water Pump">
+                        <img src="images/222.jpg" alt="Submersible Water Pump">
+                    </div>
+                    <div class="product-content">
+                        <h3>Submersible Water Pump</h3>
+                        <div class="price">UGX ..........</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/14.jpg" alt="PVC Pipes">
+                        <img src="images/444.jpg" alt="PVC Pipes">
+                        <img src="images/333.jpg" alt="PVC Pipes">
+                    </div>
+                    <div class="product-content">
+                        <h3>PVC Pipes</h3>
+                        <div class="price">UGX ........</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/13.jpg" alt="Solar Water Heater">
+                        <img src="images/666.jpg" alt="Solar Water Heater">
+                        <img src="images/555.jpg" alt="Solar Water Heater">
+                    </div>
+                    <div class="product-content">
+                        <h3>Solar Water Heater</h3>
+                        <div class="price">UGX ........</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/10.jpg" alt="Modern Toilet">
+                        <img src="images/888.jpg" alt="Modern Toilet">
+                        <img src="images/777.jpg" alt="Modern Toilet">
+                    </div>
+                    <div class="product-content">
+                        <h3>Modern Toilet</h3>
+                        <div class="price">UGX .......</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/01.jpg" alt="Water Storage Tank">
+                        <img src="images/999.jpg" alt="Water Storage Tank">
+                        <img src="images/1010.jpg" alt="Water Storage Tank">
+                    </div>
+                    <div class="product-content">
+                        <h3></h3>
+                        <div class="price">UGX .......</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/16.jpg" alt="Centrifugal Pump">
+                        <img src="images/1111.jpg" alt="Centrifugal Pump">
+                        <img src="images/1212.jpg" alt="Centrifugal Pump">
+                    </div>
+                    <div class="product-content">
+                        <h3></h3>
+                        <div class="price">UGX .......</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/17.jpg" alt="Bathroom Sink">
+                        <img src="images/1313.jpg" alt="Bathroom Sink">
+                        <img src="images/1414.jpg" alt="Bathroom Sink">
+                    </div>
+                    <div class="product-content">
+                        <h3></h3>
+                        <div class="price">UGX ...........</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/18.jpg" alt="Shower System">
+                        <img src="images/1515.jpg" alt="Shower System">
+                        <img src="images/1616.jpg" alt="Shower System">
+                    </div>
+                    <div class="product-content">
+                        <h3>Shower System</h3>
+                        <div class="price">UGX ............</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/19.jpg" alt="Water Filters">
+                        <img src="images/1717.jpg" alt="Water Filters">
+                        <img src="images/1818.jpg" alt="Water Filters">
+                    </div>
+                    <div class="product-content">
+                        <h3></h3>
+                        <div class="price">UGX ............</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 10 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/20.jpg" alt="Pipe Fittings">
+                        <img src="images/1919.jpg" alt="Pipe Fittings">
+                        <img src="images/2020.jpg" alt="Pipe Fittings">
+                    </div>
+                    <div class="product-content">
+                        <h3></h3>
+                        <div class="price">UGX .........</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 11 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/21.jpg" alt="Water Meters">
+                        <img src="images/2121.jpg" alt="Water Meters">
+                        <img src="images/2222.jpg" alt="Water Meters">
+                    </div>
+                    <div class="product-content">
+                        <h3></h3>
+                        <div class="price">UGX .........</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 12 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/22.jpg" alt="Borehole Casing">
+                        <img src="images/2323.jpg" alt="Borehole Casing">
+                        <img src="images/2424.jpg" alt="Borehole Casing">
+                    </div>
+                    <div class="product-content">
+                        <h3>Borehole Casing</h3>
+                        <div class="price">UGX ..........</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 13 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/23.jpg" alt="Water Pressure Booster">
+                        <img src="images/2525.jpg" alt="Water Pressure Booster">
+                        <img src="images/2626.jpg" alt="Water Pressure Booster">
+                    </div>
+                    <div class="product-content">
+                        <h3></h3>
+                        <div class="price">UGX ..............</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 14 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/24.jpg" alt="Bathroom Faucets">
+                        <img src="images/2727.jpg" alt="Bathroom Faucets">
+                        <img src="images/2828.jpg" alt="Bathroom Faucets">
+                    </div>
+                    <div class="product-content">
+                        <h3></h3>
+                        <div class="price">UGX ...............</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 15 -->
+                <div class="product-card">
+                    <div class="product-images">
+                        <img src="images/25.jpg" alt="Drainage Systems">
+                        <img src="images/2929.jpg" alt="Drainage Systems">
+                        <img src="images/3030.jpg" alt="Drainage Systems">
+                    </div>
+                    <div class="product-content">
+                        <h3></h3>
+                        <div class="price">UGX ...........</div>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Perfect Plumbing</h3>
+                    <p>Professional and reliable plumbing solutions in Uganda since 2010. We deliver quality workmanship using the best materials for lasting results.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/256701555544" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://x.com/ugandaperfect?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.tiktok.com/@perfectplumbingug55?_t=ZM-8vOYSqKTgqV&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#products">Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Biodigester Installation</a></li>
+                        <li><a href="#">Swimming Pool Plumbing</a></li>
+                        <li><a href="#">Well Drilling</a></li>
+                        <li><a href="#">Borehole Drilling</a></li>
+                        <li><a href="#">Plumbing Renovation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+256701555544">+256 701 555544</a></li>
+                        <li><i class="fas fa-envelope"></i> info@perfectplumbing.ug</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Hardware City, Nakasero, Kampala, Uganda</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Perfect Plumbing Uganda Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/256701555544" class="whatsapp-fab" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-links li');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            // Animate Links
+            links.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+        });
+        
+        // Close mobile menu when clicking a link
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                links.forEach(link => {
+                    link.style.animation = '';
+                });
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .product-card, .about-text, .about-image');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.service-card, .product-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(50px)';
+            element.style.transition = 'all 0.5s ease';
+        });
+        
+        document.querySelector('.about-text').style.opacity = '0';
+        document.querySelector('.about-text').style.transform = 'translateX(-50px)';
+        document.querySelector('.about-text').style.transition = 'all 0.5s ease';
+        
+        document.querySelector('.about-image').style.opacity = '0';
+        document.querySelector('.about-image').style.transform = 'translateX(50px)';
+        document.querySelector('.about-image').style.transition = 'all 0.5s ease';
+        
+        // Run animation on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
